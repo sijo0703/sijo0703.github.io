@@ -1,0 +1,2 @@
+(this["webpackJsonp@sijo0703/swappityswap"]=this["webpackJsonp@sijo0703/swappityswap"]||[]).push([[8],{1207:function(n,i){},936:function(n,i){},937:function(n,i){},963:function(n,i){},964:function(n,i){},970:function(n,i){}}]);
+//# sourceMappingURL=8.8691f876.chunk.js.map
