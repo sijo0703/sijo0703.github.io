@@ -3,135 +3,136 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Sijoy Thomas</title>
+<title>Sijoy Thomas — Solutions Architect</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --bg:#0f0f0e;
-  --bg2:#161614;
-  --bg3:#1c1c1a;
-  --text:#f0ede8;
-  --muted:#8a8780;
-  --border:#2a2a27;
-  --accent:#c9a96e;
-  --accent2:#e8d5b0;
-  --link:#c9a96e;
+  --bg:#0a0e1a;
+  --bg2:#111827;
+  --bg3:#1a2235;
+  --accent:#3b82f6;
+  --accent2:#06b6d4;
+  --text:#f1f5f9;
+  --muted:#94a3b8;
+  --border:#1e2d45;
+  --card:#141e30;
 }
-body{font-family:'Georgia',serif;background:var(--bg);color:var(--text);line-height:1.7}
-a{color:var(--link);text-decoration:none}
-a:hover{text-decoration:underline}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+a{color:var(--accent);text-decoration:none}
+a:hover{color:var(--accent2)}
 
 /* NAV */
-nav{border-bottom:1px solid var(--border);padding:0 2rem;background:rgba(15,15,14,.95);backdrop-filter:blur(6px);position:fixed;top:0;left:0;right:0;z-index:100}
-.nav-inner{max-width:960px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:56px}
-.logo{font-size:.9rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-family:'Segoe UI',system-ui,sans-serif;font-weight:500}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,14,26,0.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:0 2rem}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:60px}
+.logo{font-size:1.1rem;font-weight:700;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .nav-links{display:flex;gap:2rem;list-style:none}
-.nav-links a{font-size:.78rem;color:var(--muted);font-family:'Segoe UI',system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;transition:color .15s}
-.nav-links a:hover{color:var(--text);text-decoration:none}
+.nav-links a{font-size:.875rem;color:var(--muted);transition:color .2s}
+.nav-links a:hover{color:var(--text)}
 
-.wrap{max-width:960px;margin:0 auto;padding:0 2rem}
+/* SECTIONS */
+section{max-width:1100px;margin:0 auto;padding:5rem 2rem}
+.section-label{font-size:.75rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem}
+.section-title{font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem}
+.section-sub{color:var(--muted);font-size:1.05rem;max-width:600px}
 
 /* HERO */
-#hero{padding:9rem 0 6rem;border-bottom:1px solid var(--border)}
-.eyebrow{font-family:'Segoe UI',system-ui,sans-serif;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:2rem;display:flex;align-items:center;gap:.75rem}
-.eyebrow::before{content:'';display:inline-block;width:24px;height:1px;background:var(--accent)}
-h1{font-size:clamp(2.2rem,5vw,3.5rem);font-weight:normal;line-height:1.15;margin-bottom:1.5rem;letter-spacing:-.02em;color:var(--text)}
-h1 em{font-style:italic;color:var(--accent)}
-.hero-desc{font-size:1rem;color:var(--muted);max-width:520px;margin-bottom:2.5rem;font-family:'Segoe UI',system-ui,sans-serif;line-height:1.75}
-.hero-ctas{display:flex;gap:1.25rem;align-items:center}
-.btn-gold{background:transparent;color:var(--accent);padding:.6rem 1.75rem;font-family:'Segoe UI',system-ui,sans-serif;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--accent);cursor:pointer;transition:all .2s}
-.btn-gold:hover{background:var(--accent);color:var(--bg);text-decoration:none}
-.btn-ghost{font-family:'Segoe UI',system-ui,sans-serif;font-size:.78rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid var(--border);padding-bottom:.1rem;transition:all .15s}
-.btn-ghost:hover{color:var(--text);border-color:var(--muted);text-decoration:none}
-.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:5rem;border-top:1px solid var(--border);border-left:1px solid var(--border)}
-.stat{padding:1.5rem 1.75rem;border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
-.stat-num{font-size:1.75rem;font-weight:normal;color:var(--accent);margin-bottom:.2rem}
-.stat-label{font-size:.7rem;font-family:'Segoe UI',system-ui,sans-serif;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}
-
-/* SECTION SHARED */
-.section{padding:5rem 0;border-bottom:1px solid var(--border)}
-.section-eyebrow{font-family:'Segoe UI',system-ui,sans-serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1.75rem;display:flex;align-items:center;gap:.75rem}
-.section-eyebrow::before{content:'';display:inline-block;width:20px;height:1px;background:var(--accent)}
-h2{font-size:2rem;font-weight:normal;letter-spacing:-.02em;margin-bottom:1rem;color:var(--text)}
-.lead{font-size:.95rem;color:var(--muted);font-family:'Segoe UI',system-ui,sans-serif;max-width:540px;margin-bottom:3rem;line-height:1.75}
+#hero{min-height:100vh;display:flex;align-items:center;padding-top:80px;position:relative;overflow:hidden}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;opacity:.3;pointer-events:none}
+.hero-glow{position:absolute;top:20%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(59,130,246,.12) 0%,transparent 70%);pointer-events:none}
+.hero-content{position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.3);border-radius:999px;padding:.35rem 1rem;font-size:.8rem;color:var(--accent);margin-bottom:1.5rem}
+.hero-badge span{width:6px;height:6px;background:var(--accent2);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+h1{font-size:clamp(2.5rem,6vw,4rem);font-weight:900;line-height:1.05;margin-bottom:1.5rem}
+h1 .gradient{background:linear-gradient(135deg,var(--accent),var(--accent2),#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-desc{font-size:1.15rem;color:var(--muted);max-width:580px;margin-bottom:2.5rem}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{background:var(--accent);color:#fff;padding:.75rem 1.75rem;border-radius:8px;font-weight:600;font-size:.9rem;transition:all .2s;border:none;cursor:pointer}
+.btn-primary:hover{background:#2563eb;transform:translateY(-1px)}
+.btn-outline{border:1px solid var(--border);color:var(--text);padding:.75rem 1.75rem;border-radius:8px;font-weight:600;font-size:.9rem;transition:all .2s;background:transparent;cursor:pointer}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+.hero-stats{display:flex;gap:3rem;margin-top:4rem;flex-wrap:wrap}
+.stat{border-left:2px solid var(--accent);padding-left:1rem}
+.stat-num{font-size:1.75rem;font-weight:800;color:var(--text)}
+.stat-label{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
 
 /* ABOUT */
-.about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:5rem;align-items:start}
-.about-text p{font-size:.95rem;color:var(--muted);font-family:'Segoe UI',system-ui,sans-serif;margin-bottom:1rem;line-height:1.75}
-.about-cols{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--border)}
-.about-item{padding:1.25rem 0;border-bottom:1px solid var(--border)}
-.about-item-title{font-size:.8rem;font-family:'Segoe UI',system-ui,sans-serif;font-weight:600;letter-spacing:.06em;color:var(--accent2);margin-bottom:.35rem;text-transform:uppercase;font-size:.72rem;letter-spacing:.12em}
-.about-item-desc{font-size:.85rem;color:var(--muted);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.65}
+#about{background:var(--bg2)}
+#about section{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.about-text p{color:var(--muted);margin-bottom:1rem;font-size:1rem}
+.about-highlights{display:flex;flex-direction:column;gap:1rem}
+.highlight-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.5rem;display:flex;align-items:flex-start;gap:1rem}
+.highlight-icon{width:40px;height:40px;background:rgba(59,130,246,.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.highlight-title{font-weight:600;font-size:.95rem;margin-bottom:.25rem}
+.highlight-desc{font-size:.85rem;color:var(--muted)}
 
-/* EDGE */
-.diff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--border);border-left:1px solid var(--border)}
-.diff-item{padding:2rem;border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
-.diff-num{font-size:.68rem;font-family:'Segoe UI',system-ui,sans-serif;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:1.25rem}
-.diff-title{font-size:1.05rem;margin-bottom:.75rem;color:var(--text)}
-.diff-desc{font-size:.83rem;color:var(--muted);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.75}
-.diff-tag{display:inline-block;margin-top:1.25rem;font-size:.7rem;font-family:'Segoe UI',system-ui,sans-serif;color:var(--accent);border-bottom:1px solid var(--border);letter-spacing:.06em}
+/* DIFFERENTIATOR */
+#differentiator{background:var(--bg3)}
+.diff-header{text-align:center;margin-bottom:3rem}
+.diff-header .section-sub{margin:0 auto}
+.diff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.diff-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:2rem;position:relative;overflow:hidden;transition:transform .2s,border-color .2s}
+.diff-card:hover{transform:translateY(-4px);border-color:var(--accent)}
+.diff-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+.diff-num{font-size:3rem;font-weight:900;color:rgba(59,130,246,.15);position:absolute;top:1rem;right:1.5rem;line-height:1}
+.diff-icon{width:48px;height:48px;background:rgba(59,130,246,.1);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1.25rem}
+.diff-title{font-size:1.05rem;font-weight:700;margin-bottom:.75rem}
+.diff-desc{font-size:.875rem;color:var(--muted);line-height:1.7}
+.diff-tag{display:inline-block;margin-top:1rem;background:rgba(6,182,212,.1);color:var(--accent2);border:1px solid rgba(6,182,212,.2);border-radius:999px;padding:.25rem .75rem;font-size:.75rem;font-weight:600}
 
 /* SKILLS */
-.skills-list{border-top:1px solid var(--border)}
-.skill-row{display:grid;grid-template-columns:140px 1fr;align-items:start;padding:1rem 0;border-bottom:1px solid var(--border)}
-.skill-label{font-size:.68rem;font-family:'Segoe UI',system-ui,sans-serif;text-transform:uppercase;letter-spacing:.14em;color:var(--accent);padding-top:.2rem}
+#skills{background:var(--bg2)}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:2.5rem}
+.skill-group{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem}
+.skill-group-title{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin-bottom:1rem}
 .skill-tags{display:flex;flex-wrap:wrap;gap:.5rem}
-.skill-tag{font-size:.8rem;font-family:'Segoe UI',system-ui,sans-serif;color:var(--muted)}
-.skill-tag::after{content:'·';margin-left:.5rem;color:var(--border)}
-.skill-tag:last-child::after{content:''}
+.skill-tag{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:6px;padding:.3rem .7rem;font-size:.8rem;color:var(--muted)}
 
 /* EXPERIENCE */
-.exp-list{border-top:1px solid var(--border)}
-.exp-item{padding:2.5rem 0;border-bottom:1px solid var(--border);display:grid;grid-template-columns:200px 1fr;gap:3rem}
-.exp-left{}
-.exp-role{font-size:.95rem;color:var(--text);margin-bottom:.35rem;line-height:1.4}
-.exp-company{font-size:.8rem;font-family:'Segoe UI',system-ui,sans-serif;color:var(--accent);margin-bottom:.3rem}
-.exp-period{font-size:.72rem;font-family:'Segoe UI',system-ui,sans-serif;color:var(--muted);letter-spacing:.04em}
-.exp-bullets{list-style:none}
-.exp-bullets li{font-size:.875rem;font-family:'Segoe UI',system-ui,sans-serif;color:var(--muted);padding:.3rem 0;padding-left:1.25rem;position:relative;line-height:1.65}
-.exp-bullets li::before{content:'–';position:absolute;left:0;color:var(--accent)}
+.timeline{margin-top:2.5rem;position:relative}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:var(--border)}
+.exp-item{padding-left:2rem;margin-bottom:3rem;position:relative}
+.exp-item::before{content:'';position:absolute;left:-5px;top:6px;width:11px;height:11px;background:var(--accent);border-radius:50%;border:2px solid var(--bg)}
+.exp-header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:.5rem;margin-bottom:.75rem}
+.exp-role{font-size:1.05rem;font-weight:700}
+.exp-company{color:var(--accent2);font-weight:600;font-size:.9rem}
+.exp-period{font-size:.8rem;color:var(--muted);background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:999px;padding:.2rem .7rem}
+.exp-bullets{list-style:none;margin-top:.75rem}
+.exp-bullets li{font-size:.875rem;color:var(--muted);padding:.35rem 0;padding-left:1rem;position:relative;line-height:1.6}
+.exp-bullets li::before{content:'▸';position:absolute;left:0;color:var(--accent);font-size:.7rem;top:.45rem}
 .exp-tech{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem}
-.tech-tag{font-size:.72rem;font-family:'Segoe UI',system-ui,sans-serif;color:var(--muted);border:1px solid var(--border);padding:.2rem .55rem;letter-spacing:.04em}
+.tech-badge{background:rgba(59,130,246,.08);color:var(--accent);border:1px solid rgba(59,130,246,.2);border-radius:4px;padding:.2rem .6rem;font-size:.75rem;font-weight:500}
 
 /* PROJECTS */
-.projects-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border-top:1px solid var(--border);border-left:1px solid var(--border)}
-.project-card{padding:2rem;border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
-.project-status{font-size:.68rem;font-family:'Segoe UI',system-ui,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin-bottom:.75rem}
-.project-title{font-size:.95rem;color:var(--text);margin-bottom:.6rem;line-height:1.4}
-.project-desc{font-size:.8rem;font-family:'Segoe UI',system-ui,sans-serif;color:var(--muted);line-height:1.7;margin-bottom:1rem}
-.project-link{font-size:.75rem;font-family:'Segoe UI',system-ui,sans-serif;color:var(--accent);letter-spacing:.04em}
-
-/* WEB3 */
-.web3-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--border);border-left:1px solid var(--border)}
-.web3-item{padding:2rem;border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
-.web3-org{font-size:.95rem;color:var(--text);margin-bottom:.25rem}
-.web3-role{font-size:.72rem;font-family:'Segoe UI',system-ui,sans-serif;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:1rem}
-.web3-bullets{list-style:none}
-.web3-bullets li{font-size:.8rem;font-family:'Segoe UI',system-ui,sans-serif;color:var(--muted);padding:.2rem 0;padding-left:1rem;position:relative;line-height:1.6}
-.web3-bullets li::before{content:'–';position:absolute;left:0;color:var(--border)}
-.web3-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.75rem}
-.web3-tag{font-size:.7rem;font-family:'Segoe UI',system-ui,sans-serif;color:var(--muted);border:1px solid var(--border);padding:.15rem .5rem}
-
-/* DOMAIN BANNER */
-.domain-banner{grid-column:1/-1;padding:2rem;background:var(--bg3);border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
-.domain-title{font-size:.72rem;font-family:'Segoe UI',system-ui,sans-serif;text-transform:uppercase;letter-spacing:.14em;color:var(--accent);margin-bottom:.75rem}
-.domain-desc{font-size:.875rem;font-family:'Segoe UI',system-ui,sans-serif;color:var(--muted);line-height:1.75;max-width:600px;margin-bottom:1.25rem}
-.domain-tags{display:flex;flex-wrap:wrap;gap:.5rem}
-.domain-tag{font-size:.72rem;font-family:'Segoe UI',system-ui,sans-serif;color:var(--muted);border:1px solid var(--border);padding:.2rem .65rem;letter-spacing:.04em}
+#projects{background:var(--bg3)}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-top:2.5rem}
+.project-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.75rem;transition:all .2s;position:relative}
+.project-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.project-status{display:inline-block;border-radius:999px;padding:.2rem .75rem;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:1rem}
+.status-live{background:rgba(16,185,129,.1);color:#10b981;border:1px solid rgba(16,185,129,.2)}
+.status-wip{background:rgba(245,158,11,.1);color:#f59e0b;border:1px solid rgba(245,158,11,.2)}
+.status-planned{background:rgba(148,163,184,.1);color:var(--muted);border:1px solid var(--border)}
+.project-title{font-size:1rem;font-weight:700;margin-bottom:.5rem}
+.project-desc{font-size:.85rem;color:var(--muted);line-height:1.6;margin-bottom:1.25rem}
+.project-footer{display:flex;justify-content:space-between;align-items:center}
+.project-link{font-size:.8rem;color:var(--accent);font-weight:600}
+.project-link:hover{color:var(--accent2)}
 
 /* CONTACT */
-.contact-section{padding:5rem 0}
-.contact-links{display:flex;gap:2.5rem;flex-wrap:wrap;margin-top:2rem}
-.contact-link{font-size:.82rem;font-family:'Segoe UI',system-ui,sans-serif;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;border-bottom:1px solid var(--border);padding-bottom:.15rem;transition:all .15s}
-.contact-link:hover{color:var(--accent);border-color:var(--accent);text-decoration:none}
+#contact{text-align:center}
+.contact-links{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin-top:2.5rem}
+.contact-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.25rem 2rem;display:flex;align-items:center;gap:.75rem;transition:all .2s;font-size:.9rem;color:var(--text)}
+.contact-card:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.contact-icon{font-size:1.2rem}
 
-footer{border-top:1px solid var(--border);padding:1.5rem 2rem}
-footer .wrap{display:flex;justify-content:space-between;font-size:.72rem;font-family:'Segoe UI',system-ui,sans-serif;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+/* FOOTER */
+footer{background:var(--bg2);border-top:1px solid var(--border);text-align:center;padding:2rem;font-size:.8rem;color:var(--muted)}
 
-@media(max-width:700px){
-  .about-grid,.diff-grid,.exp-item,.projects-grid,.web3-grid{grid-template-columns:1fr}
-  .hero-stats{grid-template-columns:1fr 1fr}
-  h1{font-size:2rem}
+@media(max-width:768px){
+  .diff-grid{grid-template-columns:1fr}
+  #about section{grid-template-columns:1fr}
+  h1{font-size:2.25rem}
+  .hero-stats{gap:2rem}
 }
 </style>
 </head>
@@ -139,10 +140,11 @@ footer .wrap{display:flex;justify-content:space-between;font-size:.72rem;font-fa
 
 <nav>
   <div class="nav-inner">
-    <div class="logo">Sijoy Thomas</div>
+    <div class="logo">ST</div>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
-      <li><a href="#edge">Edge</a></li>
+      <li><a href="#differentiator">Edge</a></li>
+      <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#web3">Web3</a></li>
@@ -152,307 +154,386 @@ footer .wrap{display:flex;justify-content:space-between;font-size:.72rem;font-fa
 </nav>
 
 <!-- HERO -->
-<div id="hero">
-<div class="wrap">
-  <div class="eyebrow">Solutions Architect · Austin, TX · Open to SA & FDE Roles</div>
-  <h1>Cloud architect.<br><em>Automation engineer.</em><br>Web3 native.</h1>
-  <p class="hero-desc">15+ years building enterprise systems at scale — from Dell and Accenture to Texas Health and Human Services. Now channeling that depth into Solutions Architecture, Forward Deployed Engineering, and the intersection of cloud, AI, and blockchain.</p>
-  <div class="hero-ctas">
-    <a href="mailto:sijoythomas@gmail.com"><button class="btn-gold">Get in touch</button></a>
-    <a href="#experience" class="btn-ghost">View experience</a>
-  </div>
-  <div class="hero-stats">
-    <div class="stat"><div class="stat-num">15+</div><div class="stat-label">Years in tech</div></div>
-    <div class="stat"><div class="stat-num">40%</div><div class="stat-label">Cloud cost reduction</div></div>
-    <div class="stat"><div class="stat-num">3</div><div class="stat-label">Cloud platforms</div></div>
-    <div class="stat"><div class="stat-num">2017</div><div class="stat-label">In Web3 since</div></div>
-  </div>
-</div>
+<div id="hero" style="background:var(--bg)">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <section style="padding-top:80px">
+    <div class="hero-content">
+      <div class="hero-badge"><span></span> Open to SA & FDE Roles</div>
+      <h1>Sijoy Thomas<br><span class="gradient">Solutions Architect</span><br>& Cloud Engineer</h1>
+      <p class="hero-desc">Enterprise-grade cloud architecture. Automation-first engineering. GenAI-augmented delivery. Based in Austin, TX — building the next decade in Solutions Architecture and Forward Deployed Engineering.</p>
+      <div class="hero-ctas">
+        <a href="mailto:sijoythomas@gmail.com"><button class="btn-primary">Get in Touch</button></a>
+        <a href="#experience"><button class="btn-outline">View Experience</button></a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-num">15+</div><div class="stat-label">Years in Tech</div></div>
+        <div class="stat"><div class="stat-num">40%</div><div class="stat-label">Cloud Cost Reduction</div></div>
+        <div class="stat"><div class="stat-num">3</div><div class="stat-label">Cloud Platforms</div></div>
+        <div class="stat"><div class="stat-num">4+</div><div class="stat-label">Certifications</div></div>
+      </div>
+    </div>
+  </section>
 </div>
 
 <!-- ABOUT -->
 <div id="about">
-<div class="wrap">
-<div class="section">
-  <div class="section-eyebrow">About</div>
-  <div class="about-grid">
-    <div>
-      <h2>From automation<br>to architecture</h2>
-      <div class="about-text">
-        <p>I'm a cloud and automation professional with a career defined by building systems that scale, automate the mundane, and solve real business problems.</p>
-        <p>My background spans Accenture, Dell Technologies, and Texas Health and Human Services — enterprise environments where reliability and compliance aren't optional. Now making a deliberate pivot toward Solutions Architecture and Forward Deployed Engineering.</p>
-        <p>M.S. in Computer Applications, Mahatma Gandhi University. US Citizen based in Austin, TX.</p>
-      </div>
-    </div>
-    <div class="about-cols">
-      <div class="about-item">
-        <div class="about-item-title">Cloud-native architecture</div>
-        <div class="about-item-desc">AWS-first with Azure and GCP exposure. Serverless, containerized, and event-driven systems at enterprise scale.</div>
-      </div>
-      <div class="about-item">
-        <div class="about-item-title">Automation DNA</div>
-        <div class="about-item-desc">Python-based tools running in production for 4+ years. IaC with Terraform, CI/CD with Jenkins and GitHub Actions.</div>
-      </div>
-      <div class="about-item">
-        <div class="about-item-title">Compliance & security</div>
-        <div class="about-item-desc">Deep FedRAMP, NIST 800-53, FISMA, CMMC experience designing secure public-sector workloads.</div>
-      </div>
+<section>
+  <div>
+    <div class="section-label">About Me</div>
+    <h2 class="section-title">From Automation Engineer<br>to Solutions Architect</h2>
+    <div class="about-text">
+      <p>I'm a results-driven cloud and automation professional with 15+ years across enterprise environments — from Accenture and Dell Technologies to Texas Health and Human Services.</p>
+      <p>My career has been defined by one consistent thread: building systems that scale, automate the mundane, and solve real business problems. Now I'm channeling that into a deliberate 10-year pivot toward Solutions Architecture and Forward Deployed Engineering — where technical depth meets customer impact.</p>
+      <p>I hold an M.S. in Computer Applications from Mahatma Gandhi University and am continuously building out certifications and projects to match where I'm headed.</p>
     </div>
   </div>
-</div>
-</div>
+  <div class="about-highlights">
+    <div class="highlight-card">
+      <div class="highlight-icon">☁️</div>
+      <div><div class="highlight-title">Cloud-Native Architecture</div><div class="highlight-desc">AWS-first thinking with multi-cloud exposure across Azure and GCP. Designed serverless, containerized, and event-driven systems at enterprise scale.</div></div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-icon">⚙️</div>
+      <div><div class="highlight-title">Automation DNA</div><div class="highlight-desc">Built Python-based automation tools running in production for 4+ years. IaC with Terraform, CI/CD with Jenkins and GitHub Actions.</div></div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-icon">🔐</div>
+      <div><div class="highlight-title">Enterprise & Compliance</div><div class="highlight-desc">Deep experience with FedRAMP, NIST 800-53, FISMA, CMMC — designing secure systems for public-sector workloads.</div></div>
+    </div>
+  </div>
+</section>
 </div>
 
-<!-- EDGE -->
-<div id="edge">
-<div class="wrap">
-<div class="section">
-  <div class="section-eyebrow">The Unfair Advantage</div>
-  <h2>Why I'm different</h2>
-  <p class="lead">Most SAs have architecture depth or customer skills. Few bring automation instincts, GenAI fluency, and Python execution in one package.</p>
+<!-- THE UNFAIR ADVANTAGE -->
+<div id="differentiator" style="padding:5rem 0">
+<section style="max-width:1100px;margin:0 auto;padding:0 2rem">
+  <div class="diff-header">
+    <div class="section-label">The Unfair Advantage</div>
+    <h2 class="section-title">Why I'm Different</h2>
+    <p class="section-sub">Most SAs have architecture depth or customer skills. Few bring automation instincts, GenAI fluency, and Python execution all in one.</p>
+  </div>
   <div class="diff-grid">
-    <div class="diff-item">
-      <div class="diff-num">01 — GenAI</div>
-      <div class="diff-title">GenAI-augmented SA work</div>
-      <p class="diff-desc">I use GenAI to compress the SA lifecycle — faster discovery, smarter documentation, accelerated proposals. Already prototyped LLM-powered analytics on AWS Bedrock and Google Vertex AI.</p>
-      <div class="diff-tag">AWS Bedrock · Vertex AI</div>
+    <div class="diff-card">
+      <div class="diff-num">01</div>
+      <div class="diff-icon">🤖</div>
+      <div class="diff-title">GenAI-Augmented SA Work</div>
+      <p class="diff-desc">I don't just design solutions — I use GenAI tools to compress the entire SA lifecycle. Faster discovery, smarter documentation, accelerated proposals. What takes a traditional SA a week, I deliver in a day. Already prototyped LLM-powered analytics on AWS Bedrock and Google Vertex AI.</p>
+      <span class="diff-tag">AWS Bedrock · Vertex AI · LLMs</span>
     </div>
-    <div class="diff-item">
-      <div class="diff-num">02 — Agentic AI</div>
-      <div class="diff-title">Building autonomous agents</div>
-      <p class="diff-desc">Actively developing AI agents for SA and FDE workflows — solution scoping, architecture Q&A, customer onboarding automation. DevOps background means I can deploy and operationalize, not just prototype.</p>
-      <div class="diff-tag">Python · LangChain · In progress</div>
+    <div class="diff-card">
+      <div class="diff-icon">🧠</div>
+      <div class="diff-num">02</div>
+      <div class="diff-title">Agentic AI — Building the Future</div>
+      <p class="diff-desc">Actively developing autonomous AI agents for real-world SA and FDE workflows: solution scoping, architecture Q&A, customer onboarding automation, and RFP analysis. My DevOps background means I can deploy and operationalize these agents, not just prototype them.</p>
+      <span class="diff-tag">Agentic Workflows · Python · In Progress</span>
     </div>
-    <div class="diff-item">
-      <div class="diff-num">03 — Python</div>
-      <div class="diff-title">Python-powered FDE edge</div>
-      <p class="diff-desc">Where most SAs stop at whiteboards, I write the integration. My Python archival system has run in production for 4+ years. For FDE roles, I hand off working code — not just slides.</p>
-      <div class="diff-tag">Python · REST APIs · Production</div>
+    <div class="diff-card">
+      <div class="diff-icon">🐍</div>
+      <div class="diff-num">03</div>
+      <div class="diff-title">Python-Powered FDE Edge</div>
+      <p class="diff-desc">Where most SAs stop at whiteboards, I write the integration. My Python-based archival system has run flawlessly in production for 4+ years. For FDE roles, I don't just demo the product — I can integrate it, automate it, and hand off working code on day one.</p>
+      <span class="diff-tag">Python · REST APIs · Production-proven</span>
     </div>
   </div>
-</div>
-</div>
+</section>
 </div>
 
 <!-- SKILLS -->
 <div id="skills">
-<div class="wrap">
-<div class="section">
-  <div class="section-eyebrow">Stack</div>
-  <h2>Skills & tools</h2>
-  <div class="skills-list">
-    <div class="skill-row"><div class="skill-label">Cloud</div><div class="skill-tags"><span class="skill-tag">AWS</span><span class="skill-tag">Azure</span><span class="skill-tag">GCP</span><span class="skill-tag">Lambda</span><span class="skill-tag">API Gateway</span><span class="skill-tag">Bedrock</span><span class="skill-tag">Vertex AI</span></div></div>
-    <div class="skill-row"><div class="skill-label">DevOps</div><div class="skill-tags"><span class="skill-tag">Terraform</span><span class="skill-tag">Ansible</span><span class="skill-tag">Jenkins</span><span class="skill-tag">GitHub Actions</span><span class="skill-tag">Docker</span><span class="skill-tag">Kubernetes</span></div></div>
-    <div class="skill-row"><div class="skill-label">Languages</div><div class="skill-tags"><span class="skill-tag">Python</span><span class="skill-tag">Solidity</span><span class="skill-tag">Bash</span><span class="skill-tag">Java</span><span class="skill-tag">SQL</span></div></div>
-    <div class="skill-row"><div class="skill-label">Middleware</div><div class="skill-tags"><span class="skill-tag">IBM MQ</span><span class="skill-tag">Kafka</span><span class="skill-tag">RabbitMQ</span><span class="skill-tag">Event-driven arch</span></div></div>
-    <div class="skill-row"><div class="skill-label">Observability</div><div class="skill-tags"><span class="skill-tag">Dynatrace</span><span class="skill-tag">Splunk</span><span class="skill-tag">Prometheus</span><span class="skill-tag">Grafana</span></div></div>
-    <div class="skill-row"><div class="skill-label">Compliance</div><div class="skill-tags"><span class="skill-tag">FedRAMP</span><span class="skill-tag">NIST 800-53</span><span class="skill-tag">FISMA</span><span class="skill-tag">CMMC</span><span class="skill-tag">Zero Trust</span></div></div>
-    <div class="skill-row"><div class="skill-label">Web3</div><div class="skill-tags"><span class="skill-tag">Solidity</span><span class="skill-tag">Ethereum</span><span class="skill-tag">Avalanche</span><span class="skill-tag">Uniswap V2</span><span class="skill-tag">DeFi</span><span class="skill-tag">DAOs</span></div></div>
+<section>
+  <div class="section-label">Technical Stack</div>
+  <h2 class="section-title">Skills & Tools</h2>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <div class="skill-group-title">Cloud Platforms</div>
+      <div class="skill-tags">
+        <span class="skill-tag">AWS</span><span class="skill-tag">Azure</span><span class="skill-tag">GCP</span><span class="skill-tag">AWS Lambda</span><span class="skill-tag">API Gateway</span><span class="skill-tag">AWS Bedrock</span><span class="skill-tag">Vertex AI</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">DevOps & Automation</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Terraform</span><span class="skill-tag">Ansible</span><span class="skill-tag">Jenkins</span><span class="skill-tag">GitHub Actions</span><span class="skill-tag">GitLab CI/CD</span><span class="skill-tag">Docker</span><span class="skill-tag">Kubernetes</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Programming</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Python</span><span class="skill-tag">Bash</span><span class="skill-tag">Java</span><span class="skill-tag">REST APIs</span><span class="skill-tag">SQL</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Enterprise Middleware</div>
+      <div class="skill-tags">
+        <span class="skill-tag">IBM MQ</span><span class="skill-tag">Apache Kafka</span><span class="skill-tag">RabbitMQ</span><span class="skill-tag">Event-Driven Architecture</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Monitoring & Observability</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Dynatrace</span><span class="skill-tag">Splunk</span><span class="skill-tag">Prometheus</span><span class="skill-tag">Grafana</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Compliance & Security</div>
+      <div class="skill-tags">
+        <span class="skill-tag">FedRAMP</span><span class="skill-tag">NIST 800-53</span><span class="skill-tag">FISMA</span><span class="skill-tag">CMMC</span><span class="skill-tag">Zero Trust</span><span class="skill-tag">IAM</span>
+      </div>
+    </div>
   </div>
-</div>
-</div>
+</section>
 </div>
 
 <!-- EXPERIENCE -->
-<div id="experience">
-<div class="wrap">
-<div class="section">
-  <div class="section-eyebrow">Career</div>
-  <h2>Experience</h2>
-  <div class="exp-list">
+<div id="experience" style="background:var(--bg3)">
+<section>
+  <div class="section-label">Career</div>
+  <h2 class="section-title">Experience</h2>
+  <div class="timeline">
+
     <div class="exp-item">
-      <div class="exp-left">
-        <div class="exp-role">DevOps Engineer<br>Product Architect</div>
-        <div class="exp-company">Texas Health and Human Services</div>
-        <div class="exp-period">2017 – Present · Austin, TX</div>
+      <div class="exp-header">
+        <div>
+          <div class="exp-role">DevOps Engineer / Product Architect</div>
+          <div class="exp-company">Texas Health and Human Services</div>
+        </div>
+        <span class="exp-period">2017 – Present · Austin, TX</span>
       </div>
-      <div>
-        <ul class="exp-bullets">
-          <li>AWS Cloud migration reducing infrastructure costs by 40% and accelerating delivery by 50%.</li>
-          <li>Designed cloud-native solutions with Lambda, API Gateway, and Terraform IaC.</li>
-          <li>Python archival system integrated with IBM IAM — production for 4+ years, saving 8 hrs/week.</li>
-          <li>GenAI prototypes on AWS Bedrock and Google Vertex AI for cost forecasting and ITOps analytics.</li>
-          <li>Deployed Dynatrace and Splunk monitoring, improving system reliability by 20%.</li>
-        </ul>
-        <div class="exp-tech"><span class="tech-tag">AWS</span><span class="tech-tag">Kubernetes</span><span class="tech-tag">Terraform</span><span class="tech-tag">Python</span><span class="tech-tag">Bedrock</span><span class="tech-tag">Vertex AI</span><span class="tech-tag">Splunk</span></div>
+      <ul class="exp-bullets">
+        <li>Spearheaded AWS Cloud migration reducing infrastructure costs by 40% and accelerating delivery by 50% using AWS Application Discovery, DMS, and MGN.</li>
+        <li>Designed cloud-native solutions with AWS Lambda, API Gateway, and IaC — improving scalability and deployment consistency across enterprise workloads.</li>
+        <li>Built a Python-based automated archival system integrated with IBM IAM via REST APIs — running flawlessly in production for 4+ years, saving 8+ hours/week.</li>
+        <li>Prototyped GenAI solutions on AWS Bedrock and Google Vertex AI for NLP-based ITOps analytics and cloud cost forecasting used by business executives.</li>
+        <li>Deployed Dynatrace and Splunk monitoring, driving a 20% improvement in system reliability and uptime through proactive performance management.</li>
+      </ul>
+      <div class="exp-tech">
+        <span class="tech-badge">AWS</span><span class="tech-badge">Kubernetes</span><span class="tech-badge">Terraform</span><span class="tech-badge">Python</span><span class="tech-badge">AWS Bedrock</span><span class="tech-badge">Vertex AI</span><span class="tech-badge">Splunk</span>
       </div>
     </div>
+
     <div class="exp-item">
-      <div class="exp-left">
-        <div class="exp-role">Integration Team Lead</div>
-        <div class="exp-company">Dell Technologies</div>
-        <div class="exp-period">2013 – 2016 · Round Rock, TX</div>
+      <div class="exp-header">
+        <div>
+          <div class="exp-role">Integration Team Lead</div>
+          <div class="exp-company">Dell Technologies</div>
+        </div>
+        <span class="exp-period">2013 – 2016 · Round Rock, TX</span>
       </div>
-      <div>
-        <ul class="exp-bullets">
-          <li>Led enterprise messaging architecture across distributed systems at global scale.</li>
-          <li>Designed event-driven architecture with RabbitMQ and Apache Kafka.</li>
-          <li>Splunk monitoring deployment reducing incident response time by 20%.</li>
-        </ul>
-        <div class="exp-tech"><span class="tech-tag">IBM MQ</span><span class="tech-tag">Kafka</span><span class="tech-tag">RabbitMQ</span><span class="tech-tag">AWS</span><span class="tech-tag">Splunk</span></div>
+      <ul class="exp-bullets">
+        <li>Led enterprise messaging and integration architecture supporting secure application interoperability across distributed systems at global scale.</li>
+        <li>Designed event-driven architecture with RabbitMQ and Apache Kafka, improving scalability, resiliency, and system decoupling.</li>
+        <li>Deployed automated Splunk monitoring solution, reducing incident response time by 20% through proactive issue detection.</li>
+        <li>Facilitated cross-functional collaboration across infrastructure, development, security, and business teams.</li>
+      </ul>
+      <div class="exp-tech">
+        <span class="tech-badge">IBM MQ</span><span class="tech-badge">Apache Kafka</span><span class="tech-badge">RabbitMQ</span><span class="tech-badge">AWS</span><span class="tech-badge">Splunk</span><span class="tech-badge">GitLab</span>
       </div>
     </div>
+
     <div class="exp-item">
-      <div class="exp-left">
-        <div class="exp-role">Integration Architect</div>
-        <div class="exp-company">Capgemini / Oracle</div>
-        <div class="exp-period">2011 – 2012 · Bengaluru, India</div>
+      <div class="exp-header">
+        <div>
+          <div class="exp-role">Integration Architect</div>
+          <div class="exp-company">Capgemini / Oracle</div>
+        </div>
+        <span class="exp-period">2011 – 2012 · Bengaluru, India</span>
       </div>
-      <div>
-        <ul class="exp-bullets">
-          <li>Optimized SLOs and error budgets, improving delivery pipelines by 20%.</li>
-          <li>Reduced reactive patching through continuous improvement strategies.</li>
-        </ul>
-        <div class="exp-tech"><span class="tech-tag">IBM MQ</span><span class="tech-tag">Java</span><span class="tech-tag">Oracle</span><span class="tech-tag">Linux</span></div>
+      <ul class="exp-bullets">
+        <li>Optimized SLOs and error budgets to maximize system reliability in production environments.</li>
+        <li>Improved software delivery pipelines, resulting in a 20% increase in proactive product updates and reduced reliance on reactive patching.</li>
+      </ul>
+      <div class="exp-tech">
+        <span class="tech-badge">IBM MQ</span><span class="tech-badge">Java</span><span class="tech-badge">Oracle</span><span class="tech-badge">Linux</span>
       </div>
     </div>
+
     <div class="exp-item">
-      <div class="exp-left">
-        <div class="exp-role">Build & Release Engineer</div>
-        <div class="exp-company">Accenture / Best Buy</div>
-        <div class="exp-period">2008 – 2010 · Minneapolis, MN</div>
+      <div class="exp-header">
+        <div>
+          <div class="exp-role">Build & Release Engineer</div>
+          <div class="exp-company">Accenture / Best Buy</div>
+        </div>
+        <span class="exp-period">2008 – 2010 · Minneapolis, MN</span>
       </div>
-      <div>
-        <ul class="exp-bullets">
-          <li>Pioneered automated build and release processes — the foundation of modern CI/CD pipelines.</li>
-          <li>Standardized deployment practices across cross-functional teams.</li>
-        </ul>
-        <div class="exp-tech"><span class="tech-tag">Java</span><span class="tech-tag">SVN</span><span class="tech-tag">Linux</span><span class="tech-tag">Solaris</span></div>
+      <ul class="exp-bullets">
+        <li>Spearheaded adoption of automated build and release processes — laying the groundwork for modern CI/CD pipelines across multiple product lines.</li>
+        <li>Standardized deployment practices through configuration and release governance across cross-functional teams.</li>
+      </ul>
+      <div class="exp-tech">
+        <span class="tech-badge">Java</span><span class="tech-badge">SVN</span><span class="tech-badge">Linux</span><span class="tech-badge">Solaris</span>
       </div>
     </div>
+
   </div>
-</div>
-</div>
+</section>
 </div>
 
 <!-- PROJECTS -->
 <div id="projects">
-<div class="wrap">
-<div class="section">
-  <div class="section-eyebrow">Work</div>
-  <h2>Projects</h2>
-  <p class="lead">Real repos, real production code, and what's being built next.</p>
+<section>
+  <div class="section-label">Portfolio</div>
+  <h2 class="section-title">Projects</h2>
+  <p class="section-sub">A mix of production work, hackathon prototypes, and what's being built next. GitHub is a living portfolio — check back often.</p>
   <div class="projects-grid">
     <div class="project-card">
-      <div class="project-status">Solidity · 4 ★ · 3 forks</div>
+      <span class="project-status status-live">Solidity · 4 ★ · 3 forks</span>
       <div class="project-title">Solidity Smart Contracts</div>
-      <p class="project-desc">ERC-20 token, on-chain voting, and 2023 contract experiments. Community-starred with real forks.</p>
-      <a class="project-link" href="https://github.com/sijo0703/solidity-contracts" target="_blank">View on GitHub →</a>
+      <p class="project-desc">Collection of Ethereum smart contracts including ERC-20 token (MyToken.sol), on-chain Voting contract, and 2023 contract experiments. Community-starred with real forks.</p>
+      <div class="project-footer"><a class="project-link" href="https://github.com/sijo0703/solidity-contracts" target="_blank">View on GitHub →</a></div>
     </div>
     <div class="project-card">
-      <div class="project-status">TypeScript · DeFi</div>
-      <div class="project-title">DEX Clone — Uniswap V2</div>
-      <p class="project-desc">Full decentralized exchange from the Uniswap V2 protocol. AMM mechanics, liquidity pools, swap routing.</p>
-      <a class="project-link" href="https://github.com/sijo0703/DEX-Course-u-exchange" target="_blank">View on GitHub →</a>
-    </div>
-    <div class="project-card">
-      <div class="project-status">Solidity · Multi-chain</div>
-      <div class="project-title">Avalanche Smart Contracts</div>
-      <p class="project-desc">Smart contract work on Avalanche — cross-chain awareness beyond Ethereum mainnet.</p>
-      <a class="project-link" href="https://github.com/sijo0703/AvalancheSmartContracts" target="_blank">View on GitHub →</a>
-    </div>
-    <div class="project-card">
-      <div class="project-status">Hackathon · AWS Bedrock</div>
-      <div class="project-title">LLM Cost Forecasting</div>
-      <p class="project-desc">NLP-powered cloud cost forecasting on AWS Bedrock — used by executives at HHSC for revenue planning.</p>
-      <a class="project-link" href="https://github.com/sijo0703" target="_blank">View on GitHub →</a>
-    </div>
-    <div class="project-card">
-      <div class="project-status">JavaScript · Ethereum</div>
+      <span class="project-status status-live">JavaScript · Ethereum</span>
       <div class="project-title">Ethereum Studio — Open Auction</div>
-      <p class="project-desc">Decentralized auction contract with bidding logic and fund management in Solidity.</p>
-      <a class="project-link" href="https://github.com/sijo0703/EthereumStudio" target="_blank">View on GitHub →</a>
+      <p class="project-desc">Decentralized open auction contract built inside Ethereum Studio. Covers bidding logic, fund management, and auction finalization in Solidity with a JS frontend.</p>
+      <div class="project-footer"><a class="project-link" href="https://github.com/sijo0703/EthereumStudio" target="_blank">View on GitHub →</a></div>
     </div>
     <div class="project-card">
-      <div class="project-status">In progress</div>
+      <span class="project-status status-live">Solidity · Multi-chain</span>
+      <div class="project-title">Avalanche Smart Contracts</div>
+      <p class="project-desc">Smart contract development on the Avalanche network — demonstrating cross-chain awareness beyond Ethereum mainnet and familiarity with EVM-compatible L1s.</p>
+      <div class="project-footer"><a class="project-link" href="https://github.com/sijo0703/AvalancheSmartContracts" target="_blank">View on GitHub →</a></div>
+    </div>
+    <div class="project-card">
+      <span class="project-status status-live">TypeScript · DeFi</span>
+      <div class="project-title">DEX Clone — Uniswap V2</div>
+      <p class="project-desc">Full decentralized exchange built from the Uniswap V2 protocol as part of BDU's DEX Course. Covers AMM mechanics, liquidity pools, and swap routing.</p>
+      <div class="project-footer"><a class="project-link" href="https://github.com/sijo0703/DEX-Course-u-exchange" target="_blank">View on GitHub →</a></div>
+    </div>
+    <div class="project-card">
+      <span class="project-status status-live">Hackathon Prototype</span>
+      <div class="project-title">AWS Bedrock Cost Forecasting</div>
+      <p class="project-desc">LLM-powered NLP solution on AWS Bedrock for predictive analytics and cloud cost forecasting — built for and used by business executives at HHSC.</p>
+      <div class="project-footer"><a class="project-link" href="https://github.com/sijo0703" target="_blank">View on GitHub →</a></div>
+    </div>
+    <div class="project-card">
+      <span class="project-status status-wip">In Progress</span>
       <div class="project-title">SA Agentic Workflow Agent</div>
-      <p class="project-desc">Autonomous agent for SA tasks: scoping, architecture Q&A, onboarding runbooks. Python + LangChain.</p>
-      <a class="project-link" href="https://github.com/sijo0703" target="_blank">Follow on GitHub →</a>
+      <p class="project-desc">Building an autonomous AI agent to automate SA tasks: solution scoping, architecture Q&A, and customer onboarding runbooks. Python + LangChain.</p>
+      <div class="project-footer"><a class="project-link" href="https://github.com/sijo0703" target="_blank">Follow on GitHub →</a></div>
     </div>
   </div>
-</div>
-</div>
+</section>
 </div>
 
-<!-- WEB3 -->
-<div id="web3">
-<div class="wrap">
-<div class="section">
-  <div class="section-eyebrow">Web3 & Fintech</div>
-  <h2>Blockchain & crypto experience</h2>
-  <p class="lead">Active in the Ethereum ecosystem since 2017. My dream domain — where cloud architecture and decentralized finance converge.</p>
-  <div class="web3-grid">
-    <div class="web3-item">
-      <div class="web3-org">Bankless DAO</div>
-      <div class="web3-role">Research Analyst · 2021 – Present</div>
-      <ul class="web3-bullets">
-        <li>Stablecoin SWOT analyses and executive summaries</li>
-        <li>DeFi, DAO, and NFT market research</li>
-        <li>Crypto grant applications</li>
-        <li>Test DAO web3 tooling contributor</li>
+<!-- WEB3 / FINTECH -->
+<div id="web3" style="background:var(--bg2)">
+<section>
+  <div class="section-label">Web3 & Fintech</div>
+  <h2 class="section-title">Blockchain & Crypto Experience</h2>
+  <p class="section-sub">My dream domain — where cloud architecture, automation, and decentralized finance converge. Active in the Ethereum ecosystem since 2017 across DeFi, DAOs, NFTs, and stablecoin research.</p>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-top:2.5rem">
+
+    <div class="diff-card" style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:2rem;position:relative;overflow:hidden;transition:transform .2s,border-color .2s">
+      <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#f59e0b,#f97316)"></div>
+      <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1rem">
+        <div style="width:44px;height:44px;background:rgba(245,158,11,.1);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.4rem">🏦</div>
+        <div>
+          <div style="font-weight:700;font-size:1rem">Bankless DAO</div>
+          <div style="font-size:.8rem;color:var(--muted)">Research Analyst · 2021 – Present</div>
+        </div>
+      </div>
+      <ul class="exp-bullets">
+        <li>Authored executive summaries and full SWOT analyses on active stablecoin projects for Bankless Research.</li>
+        <li>Conducted market research on DAOs, DeFi protocols, and NFT ecosystems — published for a global Web3 audience.</li>
+        <li>Applied for crypto grants on behalf of Bankless Research, navigating Web3-native funding mechanisms.</li>
+        <li>Contributed to Test DAO — a Bankless initiative to test and document emerging Web3 tooling.</li>
       </ul>
-      <div class="web3-tags"><span class="web3-tag">Stablecoins</span><span class="web3-tag">DeFi</span><span class="web3-tag">DAOs</span></div>
-    </div>
-    <div class="web3-item">
-      <div class="web3-org">Blockchain Developers United</div>
-      <div class="web3-role">Learning Facilitator · 2021 – Present</div>
-      <ul class="web3-bullets">
-        <li>Uniswap V2 DEX clone development</li>
-        <li>Dev Punks regenerative NFT project</li>
-        <li>Smart contracts coding & testing course</li>
-      </ul>
-      <div class="web3-tags"><span class="web3-tag">Solidity</span><span class="web3-tag">Uniswap</span><span class="web3-tag">NFTs</span></div>
-    </div>
-    <div class="web3-item">
-      <div class="web3-org">Crypto Blog Writer</div>
-      <div class="web3-role">Independent · 2017 – Present</div>
-      <ul class="web3-bullets">
-        <li>Published on Medium, Substack, Mirror.xyz</li>
-        <li>DeFi, stablecoins, blockchain infrastructure</li>
-        <li>SEO-optimized technical long-form content</li>
-      </ul>
-      <div class="web3-tags"><span class="web3-tag">Medium</span><span class="web3-tag">Mirror.xyz</span><span class="web3-tag">Substack</span></div>
-    </div>
-    <div class="domain-banner">
-      <div class="domain-title">Target domain — Fintech · Banking · Federal Blockchain · Crypto Infrastructure</div>
-      <p class="domain-desc">Bringing cloud architecture, automation, and GenAI into financial services and blockchain — private fintech, federal CBDC/digital asset programs, or crypto-native platforms. FedRAMP/FISMA compliance background + Ethereum ecosystem depth is a rare combination.</p>
-      <div class="domain-tags">
-        <span class="domain-tag">Ethereum since 2017</span>
-        <span class="domain-tag">Smart contracts & DeFi</span>
-        <span class="domain-tag">FedRAMP & FISMA</span>
-        <span class="domain-tag">Stablecoin research</span>
-        <span class="domain-tag">Multi-chain: ETH + Avalanche</span>
+      <div class="exp-tech" style="margin-top:1rem">
+        <span class="tech-badge" style="background:rgba(245,158,11,.08);color:#f59e0b;border-color:rgba(245,158,11,.2)">Stablecoins</span>
+        <span class="tech-badge" style="background:rgba(245,158,11,.08);color:#f59e0b;border-color:rgba(245,158,11,.2)">DeFi</span>
+        <span class="tech-badge" style="background:rgba(245,158,11,.08);color:#f59e0b;border-color:rgba(245,158,11,.2)">DAOs</span>
+        <span class="tech-badge" style="background:rgba(245,158,11,.08);color:#f59e0b;border-color:rgba(245,158,11,.2)">NFTs</span>
+        <span class="tech-badge" style="background:rgba(245,158,11,.08);color:#f59e0b;border-color:rgba(245,158,11,.2)">Grants</span>
       </div>
     </div>
+
+    <div class="diff-card" style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:2rem;position:relative;overflow:hidden;transition:transform .2s,border-color .2s">
+      <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#a78bfa,#3b82f6)"></div>
+      <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1rem">
+        <div style="width:44px;height:44px;background:rgba(167,139,250,.1);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.4rem">⛓️</div>
+        <div>
+          <div style="font-weight:700;font-size:1rem">Blockchain Developers United DAO</div>
+          <div style="font-size:.8rem;color:var(--muted)">Learning Facilitator · 2021 – Present</div>
+        </div>
+      </div>
+      <ul class="exp-bullets">
+        <li>Contributed to building a full DEX clone from Uniswap V2 for the BDU community — hands-on Solidity and smart contract work.</li>
+        <li>Participated in Dev Punks — a regenerative art NFT project with on-chain mechanics.</li>
+        <li>Completed 4-week intensive Smart Contracts Coding & Testing course covering Ethereum development patterns.</li>
+      </ul>
+      <div class="exp-tech" style="margin-top:1rem">
+        <span class="tech-badge" style="background:rgba(167,139,250,.08);color:#a78bfa;border-color:rgba(167,139,250,.2)">Solidity</span>
+        <span class="tech-badge" style="background:rgba(167,139,250,.08);color:#a78bfa;border-color:rgba(167,139,250,.2)">Uniswap V2</span>
+        <span class="tech-badge" style="background:rgba(167,139,250,.08);color:#a78bfa;border-color:rgba(167,139,250,.2)">Smart Contracts</span>
+        <span class="tech-badge" style="background:rgba(167,139,250,.08);color:#a78bfa;border-color:rgba(167,139,250,.2)">Ethereum</span>
+        <span class="tech-badge" style="background:rgba(167,139,250,.08);color:#a78bfa;border-color:rgba(167,139,250,.2)">NFTs</span>
+      </div>
+    </div>
+
+    <div class="diff-card" style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:2rem;position:relative;overflow:hidden;transition:transform .2s,border-color .2s">
+      <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#06b6d4,#10b981)"></div>
+      <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1rem">
+        <div style="width:44px;height:44px;background:rgba(6,182,212,.1);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.4rem">✍️</div>
+        <div>
+          <div style="font-weight:700;font-size:1rem">Crypto Blog Writer</div>
+          <div style="font-size:.8rem;color:var(--muted)">Independent · 2017 – Present</div>
+        </div>
+      </div>
+      <ul class="exp-bullets">
+        <li>Published original crypto research and analysis on Medium, Substack, and Mirror.xyz — building a public Web3 voice since 2017.</li>
+        <li>Covered DeFi, stablecoins, blockchain infrastructure, and emerging protocols with SEO-optimized long-form content.</li>
+        <li>Grew audience across Twitter and LinkedIn through consistent technical and narrative-driven crypto content.</li>
+      </ul>
+      <div class="exp-tech" style="margin-top:1rem">
+        <span class="tech-badge" style="background:rgba(6,182,212,.08);color:#06b6d4;border-color:rgba(6,182,212,.2)">Medium</span>
+        <span class="tech-badge" style="background:rgba(6,182,212,.08);color:#06b6d4;border-color:rgba(6,182,212,.2)">Substack</span>
+        <span class="tech-badge" style="background:rgba(6,182,212,.08);color:#06b6d4;border-color:rgba(6,182,212,.2)">Mirror.xyz</span>
+        <span class="tech-badge" style="background:rgba(6,182,212,.08);color:#06b6d4;border-color:rgba(6,182,212,.2)">SEO</span>
+        <span class="tech-badge" style="background:rgba(6,182,212,.08);color:#06b6d4;border-color:rgba(6,182,212,.2)">Web3 Research</span>
+      </div>
+    </div>
+
   </div>
-</div>
-</div>
+
+  <!-- Dream Domain Banner -->
+  <div style="margin-top:2.5rem;background:linear-gradient(135deg,rgba(245,158,11,.08),rgba(167,139,250,.08));border:1px solid rgba(245,158,11,.2);border-radius:16px;padding:2rem 2.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem">
+    <div>
+      <div style="font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#f59e0b;margin-bottom:.5rem">Target Domain</div>
+      <div style="font-size:1.1rem;font-weight:700;margin-bottom:.5rem">Fintech · Banking · Federal Blockchain · Crypto Infrastructure</div>
+      <p style="font-size:.875rem;color:var(--muted);max-width:560px">My goal is to bring cloud architecture, automation, and GenAI capabilities into the financial services and blockchain space — private fintech, federal CBDC/digital asset programs, or crypto-native platforms. I combine SA-level systems thinking with firsthand Ethereum ecosystem experience.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:.75rem">
+      <div style="display:flex;align-items:center;gap:.75rem;font-size:.875rem"><span style="color:#f59e0b;font-size:1rem">✦</span><span>Ethereum ecosystem since 2017</span></div>
+      <div style="display:flex;align-items:center;gap:.75rem;font-size:.875rem"><span style="color:#a78bfa;font-size:1rem">✦</span><span>Smart contracts & DeFi protocols</span></div>
+      <div style="display:flex;align-items:center;gap:.75rem;font-size:.875rem"><span style="color:#06b6d4;font-size:1rem">✦</span><span>FedRAMP & FISMA compliance background</span></div>
+      <div style="display:flex;align-items:center;gap:.75rem;font-size:.875rem"><span style="color:#10b981;font-size:1rem">✦</span><span>Stablecoin & DAO research depth</span></div>
+    </div>
+  </div>
+
+</section>
 </div>
 
 <!-- CONTACT -->
-<div id="contact">
-<div class="wrap">
-<div class="contact-section">
-  <div class="section-eyebrow">Contact</div>
-  <h2>Get in touch</h2>
-  <p class="lead" style="margin-bottom:0">Open to SA and FDE roles, technical conversations, and collaboration. Austin, TX — remote or hybrid.</p>
+<div id="contact" style="background:var(--bg3)">
+<section>
+  <div class="section-label">Let's Connect</div>
+  <h2 class="section-title">Get In Touch</h2>
+  <p class="section-sub" style="margin:0 auto 1rem">Open to SA and FDE roles, technical conversations, and collaboration. Based in Austin, TX — available for remote or hybrid opportunities.</p>
   <div class="contact-links">
-    <a class="contact-link" href="mailto:sijoythomas@gmail.com">Email</a>
-    <a class="contact-link" href="tel:7135942111">713-594-2111</a>
-    <a class="contact-link" href="https://linkedin.com/in/sijoythomas" target="_blank">LinkedIn</a>
-    <a class="contact-link" href="https://github.com/sijo0703" target="_blank">GitHub</a>
-    <a class="contact-link" href="https://learnawslikeiam5.substack.com" target="_blank">Substack</a>
-    <a class="contact-link" href="https://x.com/sijo0703" target="_blank">@sijo0703</a>
+    <a class="contact-card" href="mailto:sijoythomas@gmail.com"><span class="contact-icon">✉️</span> sijoythomas@gmail.com</a>
+    <a class="contact-card" href="tel:7135942111"><span class="contact-icon">📞</span> 713-594-2111</a>
+    <a class="contact-card" href="https://linkedin.com/in/sijoythomas" target="_blank"><span class="contact-icon">💼</span> LinkedIn</a>
+    <a class="contact-card" href="https://github.com/sijo0703" target="_blank"><span class="contact-icon">💻</span> GitHub</a>
+    <a class="contact-card" href="https://learnawslikeiam5.substack.com" target="_blank"><span class="contact-icon">📝</span> Substack</a>
+    <a class="contact-card" href="https://x.com/sijo0703" target="_blank"><span class="contact-icon">𝕏</span> @sijo0703</a>
   </div>
-</div>
-</div>
+</section>
 </div>
 
 <footer>
-  <div class="wrap">
-    <span>© 2026 Sijoy Thomas</span>
-    <span>Solutions Architect · Austin, TX · US Citizen</span>
-  </div>
+  <p>© 2026 Sijoy Thomas · Solutions Architect · Austin, TX · US Citizen</p>
 </footer>
 
 <script>
